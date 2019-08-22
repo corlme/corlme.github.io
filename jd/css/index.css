@@ -279,3 +279,26 @@ body {
 .jd-product li:nth-child(3) a {
   width: 50%;
 }
+
+/* 底部样式 */
+.jd-footer {
+  width: 100%;
+  height: 40px;
+  min-width: 320px;
+  max-width: 640px;
+  position: fixed;
+  bottom: 0;
+  background-color: rgb(29, 28, 28);
+}
+.jd-footer ul {
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+}
+.jd-footer ul li {
+  line-height: 40px;
+}
+.jd-footer ul li a {
+  display: block;
+  color: #fff;
+}

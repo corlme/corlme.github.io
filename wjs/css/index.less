@@ -1,0 +1,484 @@
+//引入字体图标
+@font-face {
+  font-family: 'wjs-icon-font';
+  src: url('../fonts/MiFie-Web-Font.eot');
+  src: url('../fonts/MiFie-Web-Font.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/MiFie-Web-Font.woff') format('woff2'),
+  url('../fonts/MiFie-Web-Font.woff') format('woff'),
+  url('../fonts/MiFie-Web-Font.ttf') format('truetype'),
+  url('../fonts/MiFie-Web-Font.svg#iconfont') format('svg');
+}
+
+//字体图标配合伪元素使用
+[class^="wjs-icon-"] {
+  font-family: 'wjs-icon-font';
+}
+.wjs-icon-phone::before {
+  content: '\e908';
+}
+.wjs-icon-tel::before {
+  content: '\e909';
+}
+.wjs-icon-logo::before {
+  content: '\e920';
+}
+.wjs-icon-text::before {
+  content: '\e93e';
+}
+
+.wjs-icon-E903::before{
+  content: "\e903";
+}
+.wjs-icon-E906::before{
+  content: "\e906";
+}
+.wjs-icon-E905::before{
+  content: "\e905";
+}
+.wjs-icon-E907::before{
+  content: "\e907";
+}
+.wjs-icon-E901::before{
+  content: "\e901";
+}
+.wjs-icon-E900::before{
+  content: "\e900";
+}
+.wjs-icon-E904::before{
+  content: "\e904";
+}
+.wjs-icon-E902::before{
+  content: "\e902";
+}
+.wjs-icon-E906::before{
+  content: "\e906";
+}
+.wjs-icon-new01::before{
+  content: "\e90e";
+}
+.wjs-icon-new02::before{
+  content: "\e90f";
+}
+.wjs-icon-new03::before{
+  content: "\e910";
+}
+.wjs-icon-new04::before{
+  content: "\e911";
+}
+.wjs-icon-partner01::before{
+  content:"\e946";
+}
+.wjs-icon-partner02::before{
+  content: "\e92f";
+}
+.wjs-icon-partner03::before{
+  content: "\e92e";
+}
+.wjs-icon-partner04::before{
+  content: "\e92a";
+}
+.wjs-icon-partner05::before{
+  content: "\e929";
+}
+.wjs-icon-partner06::before{
+  content: "\e931";
+}
+.wjs-icon-partner07::before{
+  content: "\e92c";
+}
+.wjs-icon-partner08::before{
+  content: "\e92b";
+}
+.wjs-icon-partner09::before{
+  content: "\e92d";
+}
+
+
+body {
+  height: 2000px;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: #333;
+}
+//头部样式
+.wjs-header{
+  height: 40px;
+  border-bottom: 1px solid #cccccc;
+  text-align: center;
+  line-height: 40px;
+    .row {
+      >div{
+        height: 40px;
+        border-right: 1px solid #ccc;
+      }
+      >div:last-child {
+        border-right: none;
+      }
+      .btn-register {
+        padding: 3px 10px;
+        font-size: 14px;
+      }
+    }
+}
+
+//导航条
+.wjs-nav {
+  .wjs-navbar {
+    //background-color: lime;
+    border-color: hotpink;
+    margin-bottom: 0px;
+  }
+  .wjs-navbar .navbar-brand {
+    color: #000;
+    height: 80px;
+    line-height: 50px;
+  }
+
+  .wjs-navbar .navbar-brand  .wjs-icon-logo {
+    font-size: 50px;
+    color: red;
+    vertical-align: middle;
+  }
+
+  .wjs-navbar .navbar-brand  .wjs-icon-text {
+    font-size: 30px;
+    color: #000;
+    vertical-align: middle;
+  }
+  .wjs-navbar .navbar-brand:hover,
+  .wjs-navbar .navbar-brand:focus {
+    color: #5e5e5e;
+    background-color: rgba(0,0,0,0);
+  }
+  .wjs-navbar .navbar-text {
+    color: #777;
+  }
+  .wjs-navbar .navbar-nav > li > a {
+    color: #777;
+    height: 80px;
+    line-height: 50px;
+  }
+  .wjs-navbar .navbar-nav > li > a:hover,
+  .wjs-navbar .navbar-nav > li > a:focus {
+    border-bottom: 3px solid red;
+    background-color: #fff;
+  }
+  .wjs-navbar .navbar-nav > .active > a,
+  .wjs-navbar .navbar-nav > .active > a:hover,
+  .wjs-navbar .navbar-nav > .active > a:focus {
+    color: #555;
+    background-color: #fff;
+  }
+  .wjs-navbar .navbar-nav > .disabled > a,
+  .wjs-navbar .navbar-nav > .disabled > a:hover,
+  .wjs-navbar .navbar-nav > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+  }
+  .wjs-navbar .navbar-toggle {
+    border-color: #ddd;
+    margin-top: 23px;
+  }
+  .wjs-navbar .navbar-toggle:hover,
+  .wjs-navbar .navbar-toggle:focus {
+    background-color: #ddd;
+  }
+  .wjs-navbar .navbar-toggle .icon-bar {
+    background-color: #888;
+  }
+}
+
+//轮播图部分
+.wjs-banner {
+  .pc-img {
+    height: 410px;
+    background-position: center center;
+  }
+  .m-img {
+    width: 100%;
+  }
+}
+
+//信息模块
+.wjs-info {
+  padding: 20px 0;
+
+  .row {
+      >div {
+        margin-bottom: 20px;
+      }
+      .media {
+        .media-left {
+          font-size: 32px;
+        }
+        .media-body {
+          >p {
+            color: forestgreen;
+          }
+        }
+      }
+  }
+}
+
+//中等屏幕
+@media screen and (min-width:992px){
+  .wjs-info {
+    .container {
+      width: 970px;
+    }
+  }
+}
+
+//预约模块
+.wjs-book {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 40px 0;
+  .book-link {
+    color: red;
+    border-bottom: 1px dashed red;
+  }
+  [class^="wjs-icon-"]{
+    font-size: 24px;
+  }
+  .pull-right {
+    a:hover {
+      color: red;
+    }
+  }
+}
+
+//产品模块
+.wjs-product {
+  background-color: #eee;
+  padding: 20px 0;
+  //产品导航
+    .product-taps {
+      border-bottom: 1px solid #cccccc;
+    }
+    .product-taps > li {
+      float: left;
+    }
+    .product-taps > li > a {
+      height: 60px;
+      line-height: 40px;
+    }
+    .product-taps > li > a:hover {
+      border-bottom:3px solid red;
+      color: red;
+    }
+    //鼠标点击之后的状态
+    .product-taps > li.active > a,
+    .product-taps > li.active > a:hover,
+    .product-taps > li.active > a:focus {
+      border-bottom:3px solid red;
+      color: red;
+    }
+    .nav-out {
+      //border: 1px solid red;
+      //overflow: hidden;
+      overflow: auto;
+    }
+
+//产品主体内容
+.tab-content {
+  margin-top: 20px;
+  .row {
+    >div {
+      padding-bottom: 20px;
+      .in {
+        height: 150px;
+        background-color: #fff;
+         .left {
+           height: 100%;
+           overflow: hidden;
+           >div {
+             >p{
+               font-size: 14px;
+             }
+           }
+           //伪元素实现左上角“体验图标”
+           &::before {
+             content: '\e915';
+             font-family: 'wjs-icon-font';
+             font-size: 50px;
+             position: absolute;
+             top: -12px;
+             left: 15px;
+             color: red;
+           }
+         }
+         .right {
+           position: relative;
+           float: right;
+           width: 80px;
+           height: 100%;
+           padding-top: 35px;
+           border-left: 1px dashed #000;
+           >p{
+             text-align: center;
+             >span{
+               font-size: 32px;
+               font-weight: 700;
+             }
+           }
+           //伪元素实现小缺口（其实就是小圆 定位）
+           &::before,
+           &::after {
+             content: '';
+             position: absolute;
+             top: -8px;
+             left: -8px;
+             width: 16px;
+             height: 16px;
+             border-radius:50%;
+             background-color: #eee;
+           }
+           &::after {
+             //覆盖top值（重置top值） 让第二个圆到左下角
+             top: auto;
+             bottom: -8px;
+           }
+         }
+      }
+    }
+    .current {
+      .in {
+        background-color: red;
+        color: #fff;
+        .left::before{
+          color: #fff;
+        }
+      }
+    }
+  }
+ }
+}
+
+//新闻模块
+.wjs-news {
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+
+  .row {
+    h4 {
+      position: relative;
+      border-bottom: 1px solid #ccc;
+      line-height: 40px;
+      text-align: center;
+
+      &::before {
+        content: '';
+        //bug地方：使用伪元素 一定要加 content：‘’
+        width: 8px;
+        height: 8px;
+        position: absolute;
+        right: -8px;
+        bottom: -4px;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+      }
+    }
+
+    .news-tabs {
+
+    }
+
+    .news-tabs > li {
+      float: left;
+      margin-bottom: 60px;
+    }
+
+    .news-tabs > li:last-child {
+      margin-bottom: 0;
+    }
+
+    .news-tabs > li > a {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #ccc;
+      line-height: 40px;
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .news-tabs > li > a:hover {
+      background-color: red;
+      color: #fff;
+    }
+
+    .news-tabs > li.active > a,
+    .news-tabs > li.active > a:hover,
+    .news-tabs > li.active > a:focus {
+      background-color: red;
+      color: #fff;
+    }
+
+    .line {
+      position: absolute;
+      top: 0;
+      left: 45px;
+      width: 1px;
+      height: 100%;
+      border-left: 1px dashed red;
+    }
+  }
+
+  //新闻主体内容
+  .tab-content {
+    ul {
+      li {
+        list-style: none;
+        padding: 20px 0;
+
+        a:hover {
+          color: red;
+        }
+      }
+    }
+  }
+}
+  @media screen and (max-width:991px) {
+    .wjs-news .row .news-tabs > li {
+      margin-bottom: 0px;
+      width: 25%;
+    }
+    .wjs-news  .news-tabs > li a {
+      margin: 0 auto;
+    }
+  }
+
+//合作伙伴
+.wjs-partner {
+  text-align: center;
+  padding: 20px 0;
+  h4 {
+    font-size: 30px;
+  }
+  ul {
+    list-style: none;
+    li {
+      margin: 0 20px;
+      font-size:60px;
+      display: inline-block;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
