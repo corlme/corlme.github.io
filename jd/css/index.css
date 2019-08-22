@@ -1,0 +1,281 @@
+body {
+  background-color: #ccc;
+}
+.jd-layout {
+  background-color: #eee;
+  width: 100%;
+  min-width: 320px;
+  max-width: 640px;
+  /* height: 3000px; */
+  margin: 0 auto;
+}
+
+/* 头部搜索框样式
+    两边固定 中间搜索框自适应
+*/
+.jd-header {
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  min-width: 320px;
+  max-width: 640px;
+  padding-left: 70px;
+  padding-right: 50px;
+  z-index: 999;
+}
+.jd-header .search {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-top: 5px;
+}
+.jd-header .search input {
+  width: 100%;
+  height: 30px;
+  border-radius: 15px;
+  padding-left: 40px;
+}
+.jd-header .logo {
+  width: 60px;
+  height: 25px;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  /* 精灵图的用法 */
+  background-image: url('../images/jd-sprites.png');
+  /* background-position: 0 -216px; */
+
+  /* 背景图片为400*400 这里用的是二倍图  */
+  background-size: 200px 200px;
+  /* 背景图缩小了一半 那么用的精灵图也要缩小一半 */
+  background-position: 0 -106px;
+}
+.jd-header .search-icon {
+  position: absolute;
+  left: 10px;
+  top: 7px;
+  width: 25px;
+  height: 25px;
+  background-image: url('../images/jd-sprites.png');
+  background-size: 200px 200px;
+  background-position: -55px -105px;
+}
+.jd-header .login {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 50px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  text-align: center;
+}
+
+/* 轮播图样式 */
+.jd-banner {
+  position: relative;
+  overflow: hidden;
+}
+.jd-banner ul {
+  width: 1000%;
+  transform: translateX(-10%);
+  -webkit-transform: translateX(-10%);
+}
+.jd-layout .jd-banner ul li {
+  float: left;
+  width: 10%;
+}
+.jd-layout .jd-banner ul li a {
+  display: block;
+}
+.jd-layout .jd-banner ul img {
+  width: 100%;
+  display: block;
+}
+.jd-layout .jd-banner ol {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translate(-50%);
+}
+.jd-layout .jd-banner ol li {
+  width: 10px;
+  height: 10px;
+  float: left;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+.jd-layout .jd-banner ol li.current {
+  background-color: #fff;
+}
+
+/* 导航菜单样式 */
+.jd-nav ul li {
+  float: left;
+  width: 20%;
+  text-align: center;
+  padding: 10px 0;
+}
+.jd-nav li img {
+  width: 40px;
+  height: 40px;
+}
+.jd-nav li p {
+  font-size: 12px;
+  color: #000;
+}
+
+/* 京东快报 */
+.jd-news {
+  height: 30px;
+  position: relative;
+  padding-left: 75px;
+  padding-right: 40px;
+  background-color: #fff;
+  overflow: hidden;
+}
+.jd-news img {
+  position: absolute;
+  top: 7px;
+  left: 10px;
+  width: 73px;
+}
+.jd-news ul {
+  width: 100%;
+  height: 100%;
+  color: #000;
+  padding-left: 15px;
+}
+.jd-news ul li {
+  height: 30px;
+  line-height: 30px;
+}
+.jd-news a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  line-height: 30px;
+  padding-right: 10px;
+  color: rgb(78, 75, 75);
+}
+
+/* 秒杀模块样式 */
+.jd-seckill .title {
+  height: 30px;
+  line-height: 30px;
+  background-color: rgb(202, 233, 245);
+  text-align: center;
+  padding: 0 10px;
+}
+.jd-seckill .title .logo {
+  width: 20px;
+  height: 21px;
+  margin-top: 3px;
+  background-image: url('../images/jd-sprites.png');
+  background-size: 200px 200px;
+  background-position: -84px -110px;
+}
+.jd-seckill .title .text {
+  color: red;
+  font-size: 14px;
+  margin: 0 5px;
+}
+.jd-seckill .title .time {
+  margin-top: 6px;
+  text-align: center;
+  line-height: 18px;
+}
+.jd-seckill .title .time span {
+  float: left;
+}
+.jd-seckill .title .time span:nth-child(2n + 1) {
+  background-color: #000;
+  color: #fff;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  border-radius: 5px;
+}
+.jd-seckill .title .time span:nth-child(even) {
+  margin: 0 3px;
+}
+.jd-seckill .title .more {
+  color: #000;
+}
+
+/* 秒杀主体样式 */
+.jd-seckill .content {
+  width: 100%;
+  height: 130px;
+  /* overflow: hidden: 用在父元素身上，让子元素超出的部分隐藏掉 */
+  /* overflow: hidden; */
+  overflow-x: scroll;
+}
+.jd-seckill .content ul {
+  margin-top: 10px;
+  width: 900px;
+}
+.jd-seckill .content ul li {
+  float: left;
+  width: 90px;
+  /* height: 96px; */
+  padding-top: 3px;
+  text-align: center;
+}
+/* img：采用小米盒子阴影 飞天模型 */
+.content ul li img {
+  width: 60px;
+  height: 60px;
+  transition: all 1s;
+}
+.content ul li img:hover {
+  width: 60px;
+  height: 60px;
+  /* 盒子阴影 */
+  box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.6);
+  /* 让盒子向上平移的距离 */
+  transform: translateY(-5px);
+}
+
+.content ul li p:nth-child(2) {
+  color: red;
+  font-weight: bold;
+}
+.content ul li p:nth-child(3) {
+  color: #000;
+  font-size: 12px;
+  /* decoration:装饰 */
+  text-decoration: line-through;
+}
+
+/* 主会场样式 */
+.jd-major {
+  margin-top: 10px;
+}
+.jd-major a {
+  float: left;
+  width: 33.33%;
+}
+.jd-major a img {
+  display: block;
+  width: 100%;
+}
+
+/* 商品部分 */
+.jd-product li a {
+  float: left;
+}
+.jd-product li a img {
+  /* 图片转换成块级元素，可以去除图片之间的间距 */
+  display: block;
+  width: 100%;
+}
+.jd-product li:nth-child(1) a {
+  width: 33.33%;
+}
+.jd-product li:nth-child(2) a,
+.jd-product li:nth-child(3) a {
+  width: 50%;
+}

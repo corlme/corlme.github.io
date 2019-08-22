@@ -1,0 +1,88 @@
+/*css reset 初始化: 重置浏览器的默认样式*/
+body,
+div,
+ul,
+li,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea,
+select,
+p,
+dl,
+dt,
+dd,
+a,
+img,
+button,
+form,
+table,
+th,
+tr,
+td,
+tbody,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  /* 所有元素采用内减模式 */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* 仅限移动端 去除默认点击高亮效果 transparent：透明的*/
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  font-size: 14px;
+  color: #000;
+  /*整个页面的默认的字体 后面是备胎 */
+  font-family: "Microsoft Yahei", "Times New Roman", Times, serif;
+}
+ul,
+ol {
+  list-style: none;
+}
+a,
+a:hover {
+  text-decoration: none;
+  color: #ccc;
+}
+input {
+  /* 去除边框 */
+  border: none;
+  /* 去除轮廓 */
+  outline: none;
+  /* 去除表单在移动端 的隐形的效果 appearance:外观 */
+  -webkit-appearance: none;
+}
+
+/* 页面的公共样式 */
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+/* 清除浮动 */
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  clear: both;
+  /* overflow: auto; */
+  display: block;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}

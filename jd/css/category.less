@@ -1,0 +1,121 @@
+html,
+body {
+  height: 100%;
+}
+.cate-layout {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-width: 320px;
+  max-width: 640px;
+  margin: 0 auto;
+  padding-top: 40px;
+
+  // 头部样式
+  .cate-header {
+    width: 100%;
+    height: 40px;
+    line-height: 30px;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: skyblue;
+    position: fixed;
+    top: 0;
+    left: 0;
+    // 线性渐变  linear-gradient()默认从上到下:linear-gradient(right,red,blue):从右向左
+    // linear-gradient(right bottom,red,blue):从右上角开始
+    background: -webkit-linear-gradient(skyblue, blue);
+    background: -o-linear-gradient(skyblue, blue); // 兼容欧朋浏览器
+    background: -moz-linear-gradient(skyblue, blue); // 兼容老版本火狐浏览器
+    background: -mos-linear-gradient(skyblue, blue);
+    background: -webkit-linear-gradient(skyblue, blue); // 兼容Safari Chrome
+
+    .left {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      width: 20px;
+      height: 20px;
+      background-image: url('../images/jd-sprites.png');
+      background-size: 200px 200px;
+      background-position: -22px 0;
+    }
+    .right {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 20px;
+      height: 20px;
+      background-image: url('../images/jd-sprites.png');
+      background-size: 200px 200px;
+      background-position: -60px 0;
+    }
+    input {
+      width: 100%;
+      height: 30px;
+      margin-top: 5px;
+      padding-left: 5px;
+      border-radius: 5px;
+    }
+  }
+
+  // 主体样式
+  .cate-content {
+    height: 100%;
+    .c-left {
+      float: left;
+      width: 90px;
+      height: 100%;
+      overflow: hidden;
+      ul {
+        li {
+          width: 100%;
+          height: 45px;
+          line-height: 44px;
+          text-align: center;
+          border-right: 1px solid red;
+          border-bottom: 1px solid red;
+          color: blue;
+        }
+        li.current {
+          color: red;
+          border-right: none;
+        }
+      }
+    }
+    .c-right {
+      height: 100%;
+      padding: 5px;
+      overflow: hidden;
+      a {
+        display: block;
+        img {
+          width: 100%;
+        }
+      }
+      h3 {
+        display: inline-block;
+        margin: 10px 0 10px 0;
+        box-shadow: 2px 2px 2px 2px skyblue;
+      }
+      ul {
+        border-top: 1px solid skyblue;
+        li {
+          float: left;
+          width: 33.33%;
+          text-align: center;
+          a {
+            img {
+              width: 80%;
+            }
+            p {
+              color: #000;
+              margin-bottom: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
