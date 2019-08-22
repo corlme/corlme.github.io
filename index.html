@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>登录页</title>
+    <link rel="icon" href="wjf.jpg" />
     <style>
-      .login {
-        height: 100%;
-        overflow: hidden;
-        background-color: rgb(245, 210, 232);
+      body {
+        background-color: rgb(241, 96, 188);
       }
-      .el-form {
+      .login {
         width: 400px;
         background-color: rgb(245, 164, 218);
         box-shadow: 0px 0px 20px 10px #fff inset;
@@ -20,14 +19,59 @@
         border-radius: 20px;
         position: relative;
       }
-      .el-button + .el-button {
-        margin-left: 100px;
+      .username,
+      .password {
+        height: 50px;
+        margin-bottom: 20px;
       }
-      img {
+      .login span {
+        color: #606266;
+        font-size: 14px;
+        margin-right: 10px;
+      }
+      .login input {
+        height: 40px;
+        width: 300px;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        padding: 0 10px 0 10px;
+      }
+      .login input::-webkit-input-placeholder {
+        color: #ccc;
+      }
+      .login input::-ms-input-placeholder {
+        color: #ccc;
+      }
+      .login input::-moz-input-placeholder {
+        color: #ccc;
+      }
+      .login input::-o-input-placeholder {
+        color: #ccc;
+      }
+      .login button {
+        width: 70px;
+        height: 40px;
+        margin-left: 70px;
+        border: none;
+        color: #fff;
+        font-size: 14px;
+        border-radius: 5px;
+        background-color: #409eff;
+        border-color: #409eff;
+        margin-bottom: 30px;
+      }
+      .login .resetBtn {
+        color: #000;
+        background-color: #fff;
+      }
+      .login img {
         position: absolute;
-        top: -80px;
         left: 50%;
         transform: translateX(-50%);
+        top: -60px;
+        width: 100px;
+        height: 100px;
         border-radius: 50%;
         border: 10px solid #fff;
       }
@@ -35,33 +79,19 @@
   </head>
   <body>
     <div class="login">
-      <el-form
-        ref="form"
-        status-icon
-        :rules="rules"
-        :model="form"
-        label-width="80px"
-      >
-        <img src="../assets/avatar.jpg" alt="" />
-        <el-form-item label="用户名" prop="username">
-          <el-input
-            placeholder="请输入用户名"
-            v-model="form.username"
-          ></el-input>
-        </el-form-item>
-        <el-form-item label="密码" prop="password">
-          <el-input
-            @keyup.enter.native="login"
-            placeholder="请输入密码"
-            type="password"
-            v-model="form.password"
-          ></el-input>
-        </el-form-item>
-        <el-form-item>
-          <el-button type="primary" @click="login">登录</el-button>
-          <el-button @click="resetForm">重置</el-button>
-        </el-form-item>
-      </el-form>
+      <form id="form">
+        <img src="wjf.jpg" alt="用户头像" />
+        <div class="username">
+          <span>用户名</span>
+          <input type="text" placeholder="请输入用户名" />
+        </div>
+        <div class="password">
+          <span>密　码</span>
+          <input type="password" placeholder="请输入密码" />
+        </div>
+        <button>登录</button>
+        <button class="resetBtn">重置</button>
+      </form>
     </div>
   </body>
 </html>
