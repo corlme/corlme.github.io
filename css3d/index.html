@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>盾牌效果</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+      html,
+      body {
+        height: 100%;
+        overflow: hidden;
+        background-color: rgb(226, 28, 28);
+      }
+      .wrap {
+        padding: 20px;
+      }
+      .imgBox {
+        width: 460px;
+        margin: 60px auto;
+      }
+      .imgBox img {
+        transition: all 1s;
+      }
+      .wrap button {
+        border: none;
+        height: 40px;
+        width: 100px;
+        color: #fff;
+        line-height: 40px;
+        font-size: 16px;
+        border-radius: 5px;
+        background-color: #409eff;
+      }
+      .wrap a {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <button id="btn1">随机散开</button>
+      <button id="btn2">合并</button>
+      <a href="index2.html">点击跳转下一个案例(css3立方体旋转)</a>
+      <div class="imgBox">
+        <img src="./images/shield_1_01.png" alt="" />
+        <img src="./images/shield_1_02.png" alt="" />
+        <img src="./images/shield_1_03.png" alt="" />
+        <img src="./images/shield_1_04.png" alt="" />
+        <img src="./images/shield_1_05.png" alt="" />
+        <img src="./images/shield_1_06.png" alt="" />
+        <img src="./images/shield_1_07.png" alt="" />
+        <img src="./images/shield_1_08.png" alt="" />
+        <img src="./images/shield_1_09.png" alt="" />
+      </div>
+    </div>
+    <script>
+      var imgs = document.querySelectorAll('img')
+      var btn1 = document.getElementById('btn1')
+      var btn2 = document.getElementById('btn2')
+
+      // timer = setTimeout(function() {
+      //   imgs.forEach(function(v, i) {
+      //     var randX = Math.random() * 800 - 400
+      //     var randY = Math.random() * 400 - 200
+      //     var randDeg = Math.random() * 360
+      //     v.style.transform = 'translate(' + randX + 'px,' + randY + 'px) rotate(' + randDeg + 'deg)'
+      //   })
+      // }, 1000)
+
+      // imgs.forEach(function(v, i) {
+      //   clearTimeout(timer)
+      //   v.style.transform = 'none'
+      // })
+
+      btn1.onclick = function() {
+        imgs.forEach(function(v, i) {
+          var randX = Math.random() * 800 - 400
+          var randY = Math.random() * 400 - 200
+          var randDeg = Math.random() * 360
+
+          v.style.transform = 'translate(' + randX + 'px,' + randY + 'px) rotate(' + randDeg + 'deg)'
+        })
+      }
+
+      btn2.onclick = function() {
+        imgs.forEach(function(v, i) {
+          v.style.transform = 'none'
+        })
+      }
+    </script>
+  </body>
+</html>

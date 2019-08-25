@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>3D轮播图</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        /* display: none; */
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: red;
+      }
+      .box {
+        width: 800px;
+        height: 500px;
+        margin: 50px auto;
+        position: relative;
+      }
+      /* .box:hover a {
+        display: block;
+      } */
+      ul {
+        width: 20%;
+        height: 100%;
+        /* 辅助布局的
+        perspective: 1000px; */
+        /* 让子元素以 3d效果展示 */
+        transform-style: preserve-3d;
+        float: left;
+      }
+      ul:nth-child(2) li {
+        background-position: -160px 0;
+      }
+      ul:nth-child(3) li {
+        background-position: -320px 0;
+      }
+      ul:nth-child(4) li {
+        background-position: -480px 0;
+      }
+      ul:nth-child(5) li {
+        background-position: -640px 0;
+      }
+      /* ul:hover {
+        transform: rotateX(-360deg);
+      } */
+      li {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      li:nth-child(1) {
+        background-image: url('./images/3.jpg');
+        transform: translateZ(250px);
+      }
+      li:nth-child(2) {
+        background-image: url('./images/1.jpg');
+        transform: rotateX(90deg) translateZ(250px);
+      }
+      li:nth-child(3) {
+        background-image: url('./images/2.jpg');
+        transform: rotateX(180deg) translateZ(250px);
+      }
+      li:nth-child(4) {
+        background-image: url('./images/0.jpg');
+        transform: rotateX(270deg) translateZ(250px);
+      }
+      .arrow-left,
+      .arrow-right {
+        font-family: 'SimSun', '宋体';
+        font-size: 30px;
+        width: 30px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        color: #fff;
+        background-color: rgba(94, 199, 248, 0.4);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .arrow-left {
+        left: 0;
+      }
+      .arrow-right {
+        right: 0;
+      }
+      h1 {
+        margin-top: 20px;
+        text-align: center;
+        color: #fff;
+      }
+      .next {
+        text-decoration: none;
+        color: #fff;
+        display: block;
+        text-align: right;
+        margin: 20px 20px 0 0;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <a class="next" href="index4.html">点击跳转下一个(3D动画)</a>
+      <h1>切割轮播图</h1>
+      <div class="box">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <a href="javascript:;" class="arrow-left">&lt;</a>
+        <a href="javascript:;" class="arrow-right">&gt;</a>
+      </div>
+    </div>
+    <script>
+      // var left = document.getElementsByClassName('arrow-left')
+      var left = document.querySelector('.arrow-left')
+      var right = document.querySelector('.arrow-right')
+      var uls = document.querySelectorAll('ul')
+
+      // 设置节流阀
+      var flag = true
+
+      var index = 0
+      left.onclick = function() {
+        if (flag) {
+          // 一进来后就关闭 节流阀
+          flag = false
+          index++
+          uls.forEach(function(v, i) {
+            // i 是当前遍历的每一个ul的下标
+            // index 是整体的图片的下标
+            // 点击左箭头，让ul往上旋转
+            v.style.transition = 'all 1s ' + 0.2 * i + 's'
+            v.style.transform = 'rotateX(' + index * 90 + 'deg)'
+          })
+        }
+      }
+      right.onclick = function() {
+        if (flag) {
+          flag = false
+          index--
+          uls.forEach(function(v, i) {
+            // 点击左箭头，让ul往上旋转
+            v.style.transition = 'all 1s ' + 0.2 * i + 's'
+            v.style.transform = 'rotateX(' + index * 90 + 'deg)'
+          })
+        }
+      }
+
+      // H5 新增的监听 transition动画完成事件
+      // 在最后一个ul动画结束之后再开启节流阀
+      uls[uls.length - 1].addEventListener('transitionend', function() {
+        flag = true
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>animation动画展示</title>
+    <style>
+      body {
+        background-color: #000;
+      }
+      .fish {
+        width: 174px;
+        height: 126px;
+        background: url('./images/fish-12-126(1).png') 0 0;
+        animation: dou 3s steps(12) infinite, swim 10s infinite;
+      }
+      .fish:nth-child(1),
+      .fish:nth-child(5) {
+        animation-duration: 0.8s, 5s;
+      }
+      .fish:nth-child(2),
+      .fish:nth-child(4) {
+        animation-duration: 1s, 8s;
+      }
+      .fish:nth-child(3) {
+        animation-duration: 1.2s, 10s;
+      }
+      /* 定义抖动的动画 */
+      @keyframes dou {
+        from {
+          background-position: 0 0;
+        }
+        to {
+          background-position: 0 -1512px;
+        }
+      }
+
+      /* 定义游的动画 */
+      @keyframes swim {
+        0% {
+          transform: translateX(0) rotate(0deg);
+        }
+        25% {
+          transform: translateX(1000px) rotate(0deg);
+        }
+        50% {
+          transform: translateX(1000px) rotate(180deg);
+        }
+        75% {
+          transform: translateX(0px) rotate(180deg);
+        }
+        100% {
+          transform: translateX(0px) rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fish"></div>
+    <div class="fish"></div>
+    <div class="fish"></div>
+    <div class="fish"></div>
+    <div class="fish"></div>
+  </body>
+</html>

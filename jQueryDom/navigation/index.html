@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>轮播图</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul,
+      ol {
+        list-style: none;
+      }
+      body {
+        background-color: #000;
+      }
+      #slider {
+        width: 800px;
+        height: 500px;
+        margin: 30px auto;
+        position: relative;
+      }
+      #slider ul li {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: none;
+      }
+      #slider ul li:first-child {
+        display: block;
+      }
+      #slider ul li img {
+        display: block;
+        width: 100%;
+      }
+      .arrow {
+        display: none;
+      }
+      .arrow-left,
+      .arrow-right {
+        font-family: 'SimSun', '宋体';
+        cursor: pointer;
+        font-size: 40px;
+        color: #fff;
+        text-align: center;
+        line-height: 80px;
+        width: 40px;
+        height: 80px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+      .arrow-left:hover,
+      .arrow-right:hover {
+        background-color: rgba(77, 221, 247, 0.6);
+      }
+      .arrow-left {
+        left: 0;
+        border-radius: 0px 5px 5px 0;
+      }
+      .arrow-right {
+        right: 0;
+        border-radius: 5px 0 0 5px;
+      }
+      #slider:hover .arrow {
+        display: block;
+      }
+      h2 {
+        color: #fff;
+        text-align: center;
+        margin-top: 20px;
+      }
+      #slider ol {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      #slider ol li {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        float: left;
+        margin-right: 10px;
+      }
+      #slider ol li.current {
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>轮播图(jQuery代码实现)</h2>
+      <div id="slider">
+        <ul>
+          <li>
+            <a href="#"><img src="images/0.jpg" alt=""/></a>
+          </li>
+          <li>
+            <a href="#"><img src="images/1.jpg" alt=""/></a>
+          </li>
+          <li>
+            <a href="#"><img src="images/2.jpg" alt=""/></a>
+          </li>
+          <li>
+            <a href="#"><img src="images/3.jpg" alt=""/></a>
+          </li>
+          <li>
+            <a href="#"><img src="images/4.jpg" alt=""/></a>
+          </li>
+        </ul>
+        <ol id="point">
+          <li class="current"></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol>
+        <div class="arrow">
+          <div class="arrow-left">&lt;</div>
+          <div class="arrow-right">&gt;</div>
+        </div>
+      </div>
+    </div>
+    <script src="./jquery-1.12.4.min.js"></script>
+    <script>
+      $(function() {
+        var index = 0 // 用于存储图片下标
+        $('.arrow-right').click(function() {
+          index++
+          if (index === $('#slider>ul>li').length) {
+            index = 0
+          }
+          // 根据图片下标，显示对应图片,让兄弟图片隐藏
+          $('#slider>ul>li')
+            .eq(index)
+            .fadeIn()
+            .siblings()
+            .fadeOut()
+
+          setPoints(index)
+        })
+
+        $('.arrow-left').click(function() {
+          index--
+          if (index < 0) {
+            index = $('#slider>ul>li').length - 1
+          }
+          $('#slider>ul>li')
+            .eq(index)
+            .fadeIn()
+            .siblings()
+            .fadeOut()
+
+          setPoints(index)
+        })
+
+        // 设置定时器自动轮播
+        var timer = setInterval(function() {
+          $('.arrow-right').click()
+        }, 800)
+
+        $('#slider').mouseenter(function() {
+          clearInterval(timer)
+        })
+
+        $('#slider').mouseleave(function() {
+          timer = setInterval(function() {
+            $('.arrow-right').click()
+          }, 1500)
+        })
+
+        // 切换小圆点
+        function setPoints(index) {
+          $('#point li')
+            .eq(index)
+            .addClass('current')
+            .siblings()
+            .removeClass('current')
+        }
+      })
+    </script>
+  </body>
+</html>
